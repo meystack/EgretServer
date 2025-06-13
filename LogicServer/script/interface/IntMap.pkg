@@ -1,0 +1,25 @@
+
+class tagIntMapPair
+{
+public:
+	int Key;
+	int Value;
+	int Value2;
+};
+
+class IntMap : public CBaseScriptExportObject
+{
+public:
+	IntMap(){};
+	~IntMap(){};
+	IntMap& operator = (const IntMap &intMap);
+	int GetLen() const;
+	void Add(tagIntMapPair& Data);
+	void Add(int Key,int Value,int Value2 = -1);
+	tagIntMapPair GetDataHead();
+	tagIntMapPair GetData(int nIndex) const;
+	void SetData(int nIndex, tagIntMapPair& Data);
+	tagIntMapPair operator [] (int nIndex) const;
+	void clear();
+};
+

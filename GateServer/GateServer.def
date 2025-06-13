@@ -1,0 +1,27 @@
+LIBRARY RunGate
+EXPORTS
+
+CreateRunGate
+FreeRunGate
+RunGateSetBindAddress
+RunGateSetBindPort
+RunGateGetIOWorkThreadCount
+RunGateSetIOWorkThreadCount
+RunGateStartup
+RunGateStop
+RunGateGetActiveSessionCount
+RunGateSetName
+RunGateGetSendThreadCount
+RunGateSetSendThreadCount
+RunGateGetDataProcessType
+RunGateSetDataProcessType
+RunGateSetDataProcessPrintMsgPacket
+RunGateQuerySendThreadInfo
+RunGateEnumActiveSessions
+RunGateCloseSession
+RunGateQueryDataStatics
+RunGateResetDataStatics
+SetOutputMsgFn
+RunGateGetKernalVersion
+RunGateSetServerIP
+RunGateSetServerPort
