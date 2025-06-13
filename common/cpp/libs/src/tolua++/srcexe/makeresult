@@ -1,0 +1,10 @@
+Scanning dependencies of target tolua++
+[ 14%] Building C object CMakeFiles/tolua++.dir/tolua_push.c.o
+[ 28%] Building C object CMakeFiles/tolua++.dir/tolua_is.c.o
+[ 42%] Building C object CMakeFiles/tolua++.dir/toluabind.c.o
+[ 57%] Building C object CMakeFiles/tolua++.dir/tolua.c.o
+[ 71%] Building C object CMakeFiles/tolua++.dir/tolua_event.c.o
+[ 85%] Building C object CMakeFiles/tolua++.dir/tolua_map.c.o
+[100%] Building C object CMakeFiles/tolua++.dir/tolua_to.c.o
+Linking C executable tolua++
+[100%] Built target tolua++

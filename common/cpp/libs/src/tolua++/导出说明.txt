@@ -1,0 +1,12 @@
+1：请把需要导出的文件的头文件包含在
+serverInterface.scp里
+如 $cfile "../../property/PropertyDef.h"
+
+在这些文件里，需要导出的地方开始和结束分别使用
+//tolua_begin  //tolua_end  表示导出的开始和结束。
+
+
+2: 这些接口将会自动导出到脚本里去。
+包括类，函数，枚举，等等。
+
+3：serverInterface.cpp 这个文件是自动生成的，要加到工程里去编译。

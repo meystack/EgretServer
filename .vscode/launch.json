@@ -4,12 +4,13 @@
     // 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
+
 		{
-            "name": "(gdb) 启动AmServer",
+            "name": "(gdb) 启动跨服DBServer",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/../build/AMServer/amserver_d",
-            "args": ["${workspaceFolder}/../build/AMServer/AMServerLinux.txt"],
+            "program": "${workspaceFolder}/CS/DBServer/dbserver_d",
+            "args": ["${workspaceFolder}/CS/DBServer/DBServerLinux.txt"],
             "stopAtEntry": false, 
             "cwd": "${workspaceFolder}",
             "environment": [
@@ -27,74 +28,6 @@
                 },
             ],
             "externalConsole": false,
-            "MIMode": "gdb",
-            "setupCommands": [
-                {
-                    "description": "为 gdb 启用整齐打印",
-                    "text": "-enable-pretty-printing",
-                    "ignoreFailures": true
-                }
-            ],
-            "showDisplayString": true,
-            "additionalSOLibSearchPath": "${workspaceFolder}/common/libs;${workspaceFolder}/srvlib/libs;${workspaceFolder}/../common/cpp/libs/3rd/bin;"
-        },
-        {
-            "name": "(gdb) 附加AmServer",
-            "type": "cppdbg",
-            "request": "attach",
-            "program": "${workspaceFolder}/../build/AMServer/amserver_d",
-            "processId": "${command:pickProcess}",
-            "MIMode": "gdb",
-            "setupCommands": [
-                {
-                    "description": "为 gdb 启用整齐打印",
-                    "text": "-enable-pretty-printing",
-                    "ignoreFailures": true
-                }
-            ],
-            "showDisplayString": true,
-            "additionalSOLibSearchPath": "${workspaceFolder}/common/libs;${workspaceFolder}/srvlib/libs;${workspaceFolder}/../../common/cpp/libs/3rd/bin;"
-        },
-		{
-            "name": "(gdb) 启动BackStageServer",
-            "type": "cppdbg",
-            "request": "launch",
-            "program": "${workspaceFolder}/../build/BackStageServer/backstageserver_d",
-            "args": ["${workspaceFolder}/../build/BackStageServer/BackStageServerLinux.txt"],
-            "stopAtEntry": false, 
-            "cwd": "${workspaceFolder}",
-            "environment": [
-                {
-                    "name":"LD_PRELOAD",
-                    "value":"/usr/local/lib/faketime/libfaketime.so.1"
-                },
-                {
-                    "name":"FAKETIME_TIMESTAMP_FILE",
-                    "value":"${workspaceFolder}/../Server.time"
-                },
-                {
-                    "name":"FAKETIME_CACHE_DURATION",
-                    "value":"5"
-                },
-            ],
-            "externalConsole": false,
-            "MIMode": "gdb",
-            "setupCommands": [
-                {
-                    "description": "为 gdb 启用整齐打印",
-                    "text": "-enable-pretty-printing",
-                    "ignoreFailures": true
-                }
-            ],
-            "showDisplayString": true,
-            "additionalSOLibSearchPath": "${workspaceFolder}/common/libs;${workspaceFolder}/srvlib/libs;${workspaceFolder}/../common/cpp/libs/3rd/bin;"
-        },
-        {
-            "name": "(gdb) 附加BackStageServer",
-            "type": "cppdbg",
-            "request": "attach",
-            "program": "${workspaceFolder}/../build/BackStageServer/backstageserver_d",
-            "processId": "${command:pickProcess}",
             "MIMode": "gdb",
             "setupCommands": [
                 {
@@ -110,8 +43,8 @@
             "name": "(gdb) 启动DBServer",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/../build/DBServer/dbserver_d",
-            "args": ["${workspaceFolder}/../build/DBServer/DBServerLinux.txt"],
+            "program": "${workspaceFolder}/Exec/DBServer/dbserver_d",
+            "args": ["${workspaceFolder}/Exec/DBServer/DBServerLinux.txt"],
             "stopAtEntry": false, 
             "cwd": "${workspaceFolder}",
             "environment": [
@@ -139,30 +72,48 @@
             ],
             "showDisplayString": true,
             "additionalSOLibSearchPath": "${workspaceFolder}/common/libs;${workspaceFolder}/srvlib/libs;${workspaceFolder}/../common/cpp/libs/3rd/bin;"
-        },
+        }, 
         {
-            "name": "(gdb) 附加DBServer",
-            "type": "cppdbg",
-            "request": "attach",
-            "program": "${workspaceFolder}/../build/DBServer/dbserver_d",
-            "processId": "${command:pickProcess}",
-            "MIMode": "gdb",
-            "setupCommands": [
-                {
-                    "description": "为 gdb 启用整齐打印",
-                    "text": "-enable-pretty-printing",
-                    "ignoreFailures": true
-                }
-            ],
-            "showDisplayString": true,
-            "additionalSOLibSearchPath": "${workspaceFolder}/common/libs;${workspaceFolder}/srvlib/libs;${workspaceFolder}/../../common/cpp/libs/3rd/bin;"
-        },
-        {
-            "name": "(gdb) 启动GateServer",
+            "name": "(gdb) 启动跨服gateway",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/../build/GateServer/gateserver_d",
-            "args": ["${workspaceFolder}/../build/GateServer/GateServerLinux.txt"],
+            "program": "${workspaceFolder}/CS/Gateway/gateway_d", 
+            "args": ["${workspaceFolder}/CS/Gateway/GateWay.txt"],
+            "stopAtEntry": false, 
+            "cwd": "${workspaceFolder}",
+            "environment": [
+                {
+                    "name":"LD_PRELOAD",
+                    "value":"/usr/local/lib/faketime/libfaketime.so.1"
+                },
+                {
+                    "name":"FAKETIME_TIMESTAMP_FILE",
+                    "value":"${workspaceFolder}/../Server.time"
+                },
+                {
+                    "name":"FAKETIME_CACHE_DURATION",
+                    "value":"5"
+                },
+            ],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "为 gdb 启用整齐打印",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "showDisplayString": true,
+            "additionalSOLibSearchPath": "/home/cwl/common/libs;/home/cwl/srvlib/libs;/home/cwl/common/cpp/libs/3rd/bin;"
+        },
+        
+		{
+            "name": "(gdb) 启动gateway",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/Exec/Gateway/gateway_d",
+            "args": ["${workspaceFolder}/Exec/Gateway/GateWay.txt"],
             "stopAtEntry": false, 
             "cwd": "${workspaceFolder}",
             "environment": [
@@ -190,30 +141,13 @@
             ],
             "showDisplayString": true,
             "additionalSOLibSearchPath": "${workspaceFolder}/common/libs;${workspaceFolder}/srvlib/libs;${workspaceFolder}/../common/cpp/libs/3rd/bin;"
-        },
-        {
-            "name": "(gdb) 附加GateServer",
-            "type": "cppdbg",
-            "request": "attach",
-            "program": "${workspaceFolder}/../build/GateServer/gateserver_d",
-            "processId": "${command:pickProcess}",
-            "MIMode": "gdb",
-            "setupCommands": [
-                {
-                    "description": "为 gdb 启用整齐打印",
-                    "text": "-enable-pretty-printing",
-                    "ignoreFailures": true
-                }
-            ],
-            "showDisplayString": true,
-            "additionalSOLibSearchPath": "${workspaceFolder}/common/libs;${workspaceFolder}/srvlib/libs;${workspaceFolder}/../../common/cpp/libs/3rd/bin;"
         },
 		{
-            "name": "(gdb) 启动LocalLogServer",
+            "name": "(gdb) 启动跨服LogicServer",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/../build/LocalLogServer/locallogserver_d",
-            "args": ["${workspaceFolder}/../build/LocalLogServer/LocallogServerLinux.txt"],
+            "program": "${workspaceFolder}/CS/LogicServer/logicserver_d",
+            "args": ["${workspaceFolder}/CS/LogicServer/LogicServerLinux.txt"],
             "stopAtEntry": false, 
             "cwd": "${workspaceFolder}",
             "environment": [
@@ -223,7 +157,7 @@
                 },
                 {
                     "name":"FAKETIME_TIMESTAMP_FILE",
-                    "value":"${workspaceFolder}/../Server.time"
+                    "value":"${workspaceFolder}/Server.time"
                 },
                 {
                     "name":"FAKETIME_CACHE_DURATION",
@@ -240,82 +174,116 @@
                 }
             ],
             "showDisplayString": true,
-            "additionalSOLibSearchPath": "${workspaceFolder}/common/libs;${workspaceFolder}/srvlib/libs;${workspaceFolder}/../common/cpp/libs/3rd/bin;"
-        },
-        {
-            "name": "(gdb) 附加LocalLogServer",
-            "type": "cppdbg",
-            "request": "attach",
-            "program": "${workspaceFolder}/../build/LocalLogServer/locallogserver_d",
-            "processId": "${command:pickProcess}",
-            "MIMode": "gdb",
-            "setupCommands": [
-                {
-                    "description": "为 gdb 启用整齐打印",
-                    "text": "-enable-pretty-printing",
-                    "ignoreFailures": true
-                }
-            ],
-            "showDisplayString": true,
-            "additionalSOLibSearchPath": "${workspaceFolder}/common/libs;${workspaceFolder}/srvlib/libs;${workspaceFolder}/../common/cpp/libs/3rd/bin;"
-        },
-        {
-            "name": "(gdb) 启动LoggerServer",
-            "type": "cppdbg",
-            "request": "launch",
-            "program": "${workspaceFolder}/../build/LoggerServer/loggerserver_d",
-            "args": ["${workspaceFolder}/../build/LoggerServer/LoggerServerLinux.txt"],
-            "stopAtEntry": false, 
-            "cwd": "${workspaceFolder}",
-            "environment": [
-                {
-                    "name":"LD_PRELOAD",
-                    "value":"/usr/local/lib/faketime/libfaketime.so.1"
-                },
-                {
-                    "name":"FAKETIME_TIMESTAMP_FILE",
-                    "value":"${workspaceFolder}/../Server.time"
-                },
-                {
-                    "name":"FAKETIME_CACHE_DURATION",
-                    "value":"5"
-                },
-            ],
-            "externalConsole": false,
-            "MIMode": "gdb",
-            "setupCommands": [
-                {
-                    "description": "为 gdb 启用整齐打印",
-                    "text": "-enable-pretty-printing",
-                    "ignoreFailures": true
-                }
-            ],
-            "showDisplayString": true,
-            "additionalSOLibSearchPath": "${workspaceFolder}/common/libs;${workspaceFolder}/srvlib/libs;${workspaceFolder}/../common/cpp/libs/3rd/bin;"
-        },
-        {
-            "name": "(gdb) 附加LoggerServer",
-            "type": "cppdbg",
-            "request": "attach",
-            "program": "${workspaceFolder}/../build/LoggerServer/loggerserver_d",
-            "processId": "${command:pickProcess}",
-            "MIMode": "gdb",
-            "setupCommands": [
-                {
-                    "description": "为 gdb 启用整齐打印",
-                    "text": "-enable-pretty-printing",
-                    "ignoreFailures": true
-                }
-            ],
-            "showDisplayString": true,
-            "additionalSOLibSearchPath": "${workspaceFolder}/common/libs;${workspaceFolder}/srvlib/libs;${workspaceFolder}/../../common/cpp/libs/3rd/bin;"
+            "additionalSOLibSearchPath": "/home/cwl/common/libs;/home/cwl/srvlib/libs;/home/cwl/common/cpp/libs/3rd/bin;"
         },
 		{
             "name": "(gdb) 启动LogicServer",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/../build/LogicServer/logicserver_d",
-            "args": ["${workspaceFolder}/../build/LogicServer/LogicServerLinux.txt"],
+            "program": "${workspaceFolder}/Exec/LogicServer/logicserver_d",
+            "args": ["${workspaceFolder}/Exec/LogicServer/LogicServerLinux.txt"],
+            "stopAtEntry": false, 
+            "cwd": "${workspaceFolder}",
+            "environment": [
+                {
+                    "name":"LD_PRELOAD",
+                    "value":"/usr/local/lib/faketime/libfaketime.so.1"
+                },
+                {
+                    "name":"FAKETIME_TIMESTAMP_FILE",
+                    "value":"${workspaceFolder}/Server.time"
+                },
+                {
+                    "name":"FAKETIME_CACHE_DURATION",
+                    "value":"5"
+                },
+            ],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "为 gdb 启用整齐打印",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "showDisplayString": true,
+            "additionalSOLibSearchPath": "/home/cwl/common/libs;/home/cwl/srvlib/libs;/home/cwl/common/cpp/libs/3rd/bin;"
+        },
+		{
+            "name": "(gdb) 启动Robot",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/Exec/LogicServer/robot_d",
+            "args": ["${workspaceFolder}/Exec/LogicServer/LogicServerLinux.txt"],
+            "stopAtEntry": false, 
+            "cwd": "${workspaceFolder}",
+            "environment": [
+                {
+                    "name":"LD_PRELOAD",
+                    "value":"/usr/local/lib/faketime/libfaketime.so.1"
+                },
+                {
+                    "name":"FAKETIME_TIMESTAMP_FILE",
+                    "value":"${workspaceFolder}/Server.time"
+                },
+                {
+                    "name":"FAKETIME_CACHE_DURATION",
+                    "value":"5"
+                },
+            ],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "为 gdb 启动Robot",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "showDisplayString": true,
+            "additionalSOLibSearchPath": "/home/cwl/common/libs;/home/cwl/srvlib/libs;/home/cwl/common/cpp/libs/3rd/bin;"
+        },
+		{
+            "name": "(gdb) 启动RobotGate",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/Exec/RobotGate/robootgate_d",
+            "args": ["${workspaceFolder}/Exec/RobotGate/GateServerLinux.txt"],
+            "stopAtEntry": false, 
+            "cwd": "${workspaceFolder}",
+            "environment": [
+                {
+                    "name":"LD_PRELOAD",
+                    "value":"/usr/local/lib/faketime/libfaketime.so.1"
+                },
+                {
+                    "name":"FAKETIME_TIMESTAMP_FILE",
+                    "value":"${workspaceFolder}/Server.time"
+                },
+                {
+                    "name":"FAKETIME_CACHE_DURATION",
+                    "value":"5"
+                },
+            ],
+            "externalConsole": false,
+            "MIMode": "gdb",
+            "setupCommands": [
+                {
+                    "description": "为 gdb 启动Robot",
+                    "text": "-enable-pretty-printing",
+                    "ignoreFailures": true
+                }
+            ],
+            "showDisplayString": true,
+            "additionalSOLibSearchPath": "/home/cwl/common/libs;/home/cwl/srvlib/libs;/home/cwl/common/cpp/libs/3rd/bin;"
+        }, 
+		{
+            "name": "(gdb) 启动LocalLogServer",
+            "type": "cppdbg",
+            "request": "launch",
+            "program": "${workspaceFolder}/../Exec/LocalLogServer/locallogserver_d",
+            "args": ["${workspaceFolder}/../Exec/LocalLogServer/LocallogServerLinux.txt"],
             "stopAtEntry": false, 
             "cwd": "${workspaceFolder}",
             "environment": [
@@ -343,13 +311,30 @@
             ],
             "showDisplayString": true,
             "additionalSOLibSearchPath": "${workspaceFolder}/common/libs;${workspaceFolder}/srvlib/libs;${workspaceFolder}/../common/cpp/libs/3rd/bin;"
-        },
+        }, 
         {
-            "name": "(gdb) 附加LogicServer",
+            "name": "(gdb) 启动LoggerServer",
             "type": "cppdbg",
-            "request": "attach",
-            "program": "${workspaceFolder}/../build/LogicServer/logicserver_d",
-            "processId": "${command:pickProcess}",
+            "request": "launch",
+            "program": "${workspaceFolder}/../Exec/LoggerServer/loggerserver_d",
+            "args": ["${workspaceFolder}/../Exec/LoggerServer/LoggerServerLinux.txt"],
+            "stopAtEntry": false, 
+            "cwd": "${workspaceFolder}",
+            "environment": [
+                {
+                    "name":"LD_PRELOAD",
+                    "value":"/usr/local/lib/faketime/libfaketime.so.1"
+                },
+                {
+                    "name":"FAKETIME_TIMESTAMP_FILE",
+                    "value":"${workspaceFolder}/../Server.time"
+                },
+                {
+                    "name":"FAKETIME_CACHE_DURATION",
+                    "value":"5"
+                },
+            ],
+            "externalConsole": false,
             "MIMode": "gdb",
             "setupCommands": [
                 {
@@ -360,13 +345,13 @@
             ],
             "showDisplayString": true,
             "additionalSOLibSearchPath": "${workspaceFolder}/common/libs;${workspaceFolder}/srvlib/libs;${workspaceFolder}/../common/cpp/libs/3rd/bin;"
-        },
+        }, 
 		{
             "name": "(gdb) 启动NameServer",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/../build/NameServer/nameserver_d",
-            "args": ["${workspaceFolder}/../build/NameServer/NameServerLinux.txt"],
+            "program": "${workspaceFolder}/../Exec/NameServer/nameserver_d",
+            "args": ["${workspaceFolder}/../Exec/NameServer/NameServerLinux.txt"],
             "stopAtEntry": false, 
             "cwd": "${workspaceFolder}",
             "environment": [
@@ -394,13 +379,30 @@
             ],
             "showDisplayString": true,
             "additionalSOLibSearchPath": "${workspaceFolder}/common/libs;${workspaceFolder}/srvlib/libs;${workspaceFolder}/../common/cpp/libs/3rd/bin;"
-        },
-        {
-            "name": "(gdb) 附加NameServer",
+        }, 
+		{
+            "name": "(gdb) 启动AmServer",
             "type": "cppdbg",
-            "request": "attach",
-            "program": "${workspaceFolder}/../build/NameServer/nameserver_d",
-            "processId": "${command:pickProcess}",
+            "request": "launch",
+            "program": "${workspaceFolder}/../Exec/AMServer/amserver_d",
+            "args": ["${workspaceFolder}/../Exec/AMServer/AMServerLinux.txt"],
+            "stopAtEntry": false, 
+            "cwd": "${workspaceFolder}",
+            "environment": [
+                {
+                    "name":"LD_PRELOAD",
+                    "value":"/usr/local/lib/faketime/libfaketime.so.1"
+                },
+                {
+                    "name":"FAKETIME_TIMESTAMP_FILE",
+                    "value":"${workspaceFolder}/../Server.time"
+                },
+                {
+                    "name":"FAKETIME_CACHE_DURATION",
+                    "value":"5"
+                },
+            ],
+            "externalConsole": false,
             "MIMode": "gdb",
             "setupCommands": [
                 {
@@ -411,13 +413,13 @@
             ],
             "showDisplayString": true,
             "additionalSOLibSearchPath": "${workspaceFolder}/common/libs;${workspaceFolder}/srvlib/libs;${workspaceFolder}/../common/cpp/libs/3rd/bin;"
-        },
+        }, 
 		{
             "name": "(gdb) 启动SessionServer",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/../build/SessionServer/sessionserver_d",
-            "args": ["${workspaceFolder}/../build/SessionServer/SessionServerLinux.txt"],
+            "program": "${workspaceFolder}/../Exec/SessionServer/sessionserver_d",
+            "args": ["${workspaceFolder}/../Exec/SessionServer/SessionServerLinux.txt"],
             "stopAtEntry": false, 
             "cwd": "${workspaceFolder}",
             "environment": [
@@ -445,13 +447,30 @@
             ],
             "showDisplayString": true,
             "additionalSOLibSearchPath": "${workspaceFolder}/common/libs;${workspaceFolder}/srvlib/libs;${workspaceFolder}/../common/cpp/libs/3rd/bin;"
-        },
+        }, 
         {
-            "name": "(gdb) 附加SessionServer",
+            "name": "(gdb) 启动BackStageServer",
             "type": "cppdbg",
-            "request": "attach",
-            "program": "${workspaceFolder}/../build/SessionServer/sessionserver_d",
-            "processId": "${command:pickProcess}",
+            "request": "launch",
+            "program": "${workspaceFolder}/../Exec/BackStageServer/backstageserver_d",
+            "args": ["${workspaceFolder}/../Exec/BackStageServer/BackStageServerLinux.txt"],
+            "stopAtEntry": false, 
+            "cwd": "${workspaceFolder}",
+            "environment": [
+                {
+                    "name":"LD_PRELOAD",
+                    "value":"/usr/local/lib/faketime/libfaketime.so.1"
+                },
+                {
+                    "name":"FAKETIME_TIMESTAMP_FILE",
+                    "value":"${workspaceFolder}/../Server.time"
+                },
+                {
+                    "name":"FAKETIME_CACHE_DURATION",
+                    "value":"5"
+                },
+            ],
+            "externalConsole": false,
             "MIMode": "gdb",
             "setupCommands": [
                 {
@@ -462,6 +481,6 @@
             ],
             "showDisplayString": true,
             "additionalSOLibSearchPath": "${workspaceFolder}/common/libs;${workspaceFolder}/srvlib/libs;${workspaceFolder}/../common/cpp/libs/3rd/bin;"
-        }
+        }, 
     ]
 }
