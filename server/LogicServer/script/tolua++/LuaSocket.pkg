@@ -1,0 +1,16 @@
+﻿
+class LuaSocket
+{
+	static LuaSocket* NewSocket();
+	static void Release(LuaSocket* s, int step);
+	static double GetHostByName(const char* host);
+
+	int send(char* buf);
+	int connect(const double addr, const int port, bool block = true);
+	int connect2(const double addr, const int port, int timeout);
+	int setSendTimeout(int timeout);
+	int setRecvTimeout(int timeout);
+	const char* readline(int& retval);
+	const char* readall(int& retval);
+};
+
